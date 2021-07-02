@@ -7,9 +7,6 @@
 
     $numeros = $inst->getNumbers();
 
-    // foreach ($numeros as $value) {
-    //     echo $value . "<br>";
-    // }
 ?>
 
 <!DOCTYPE html>
@@ -108,7 +105,7 @@
 
                 <div class="container">
                     <div class="row" id="secao-apostas-1">
-                        <h2 class="centerlized">Aposta</h2>
+                        <h2 class="centerlized">#1 Aposta</h2>
                         <?php
                             $inst_1 = new RandomNumbers();
 
@@ -204,7 +201,7 @@
                 </table>
                 <div class="container">
                     <div class="row"  id="secao-apostas-2">
-                        <h2 class="centerlized">Aposta</h2>
+                        <h2 class="centerlized">#2 Aposta</h2>
                         <?php
                             $inst_2 = new RandomNumbers();
 
@@ -298,7 +295,7 @@
                     <tbody>
                 </table>
                 <div class="container">
-                    <h2 class="centerlized">Aposta</h2>
+                    <h2 class="centerlized">#3 Aposta</h2>
                     <div class="row">
                         <?php
                             $inst_3 = new RandomNumbers();
@@ -320,34 +317,11 @@
 
     <div class="row justify-content-center ">
         <button class="btn btn-primary col-2" id="refresh">Gerar apostas</button>
-        <button class="btn btn-secondary col-2 " id="marcar">Verificar resultados</button>
+        <button class="btn btn-secondary col-2 " id="mark">Marcar resultados</button>
     </div>
 </main>
 
 <script src="./assets/js/jquery.min.js"></script>
-<script>
-    const refreshBtn = document.querySelector('#refresh');
-    refreshBtn.addEventListener("click", function() {
-        location.reload();
-    });
-
-    const markBtn = document.querySelector('#marcar');
-    markBtn.addEventListener("click", function() {
-        checkNumbers(1);
-        checkNumbers(2);
-        checkNumbers(3);
-    });
-
-    function checkNumbers(number){
-        const sorteados = $(`[sorteado-${number}]`);
-        const tabela = $(`[data-secao-apostas-${number}]`);
-        
-        for (let i = 0; i < 60; i++){
-            for(let j = 0; j < 6; j++){
-                tabela[i].innerText == sorteados[j].innerText ? tabela[i].classList.add('check') : null
-            }
-        }
-    }
-</script>
+<script type="module" src="./assets/js/logic.js"></script>
 </body>
 </html>
