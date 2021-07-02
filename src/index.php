@@ -107,14 +107,19 @@
                 </table>
 
                 <div class="container">
-                    <div class="row">
+                    <div class="row" id="secao-apostas">
                         <h2 class="centerlized">Aposta</h2>
-                        <div class="col-4 border">...</div>
-                        <div class="col-4 border">...</div>
-                        <div class="col-4 border">...</div>
-                        <div class="col-4 border">...</div>
-                        <div class="col-4 border">...</div>
-                        <div class="col-4 border">...</div>
+                        <?php
+                            $inst_1 = new RandomNumbers();
+
+                            $inst_1->generate(1, 60);
+                        
+                            $numeros_1 = $inst_1->getNumbers();
+
+                            foreach ($numeros_1 as $value_1) {
+                                echo "<div class='col-4 border'>" . $value_1 . "</div>";
+                            }
+                        ?>
                     </div>
                 </div>
                 
@@ -198,14 +203,19 @@
                     <tbody>
                 </table>
                 <div class="container">
-                    <div class="row">
+                    <div class="row"  id="secao-apostas">
                         <h2 class="centerlized">Aposta</h2>
-                        <div class="col-4 border">...</div>
-                        <div class="col-4 border">...</div>
-                        <div class="col-4 border">...</div>
-                        <div class="col-4 border">...</div>
-                        <div class="col-4 border">...</div>
-                        <div class="col-4 border">...</div>
+                        <?php
+                            $inst_2 = new RandomNumbers();
+
+                            $inst_2->generate(1, 60);
+                        
+                            $numeros_2 = $inst_2->getNumbers();
+
+                            foreach ($numeros_2 as $value_2) {
+                                echo "<div class='col-4 border'>" . $value_2 . "</div>";
+                            }
+                        ?>
                     </div>
                 </div>
             </div>
@@ -289,13 +299,18 @@
                 </table>
                 <div class="container">
                     <h2 class="centerlized">Aposta</h2>
-                    <div class="row">
-                        <div class="col-4 border">...</div>
-                        <div class="col-4 border">...</div>
-                        <div class="col-4 border">...</div>
-                        <div class="col-4 border">...</div>
-                        <div class="col-4 border">...</div>
-                        <div class="col-4 border">...</div>
+                    <div class="row"  id="secao-apostas">
+                        <?php
+                            $inst_3 = new RandomNumbers();
+
+                            $inst_3->generate(1, 60);
+                        
+                            $numeros_3 = $inst_3->getNumbers();
+
+                            foreach ($numeros_3 as $value_3) {
+                                echo "<div class='col-4 border'>" . $value_3 . "</div>";
+                            }
+                        ?>
                     </div>
                 </div>
             </div>
@@ -304,10 +319,17 @@
     </div>
 
     <div class="row justify-content-center ">
-        <button class="btn btn-primary col-4">Gerar apostas</button>
+        <button class="btn btn-primary col-4" id="refresh">Gerar apostas</button>
     </div>
-
 </main>
-    
+<?php
+    echo $inst_1->getNumbers()[1];
+?>
+<script>
+    const btn = document.querySelector('#refresh');
+    btn.addEventListener("click", function() {
+        location. reload();
+    });
+</script>
 </body>
 </html>

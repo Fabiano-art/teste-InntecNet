@@ -16,11 +16,8 @@
             while (count($this->getNumbers()) < 6){
                 $num = rand(1, 60);
 
-                if (in_array($num, $this->getNumbers())) {
-                    $this->setNumbers($num);
-                }
+                in_array($num, $this->getNumbers()) ? : $this->setNumbers($num); 
 
-                $this->setNumbers($num);
             }
         }
 
